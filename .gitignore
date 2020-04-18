@@ -1,0 +1,5 @@
+.DS_*
+*.log
+node_modules
+.vscode
+.next
