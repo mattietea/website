@@ -1,31 +1,34 @@
-/** @jsx jsx */
 import { FC } from 'react'
 import Head from 'next/head'
-import { ThemeProvider, jsx } from 'theme-ui'
-import { theme } from '../lib/theme'
 import { AppProps } from 'next/app'
-import { Global } from '@emotion/core'
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Head>
         <title>Matt&apos;s Website</title>
       </Head>
       <Component {...pageProps} />
-      <Global
-        styles={(theme) => ({
-          '*': {
-            boxSizing: 'border-box',
-            margin: 0,
-            padding: 0
-          },
-          body: {
-            backgroundColor: theme.colors.backgroundColor
-          }
-        })}
-      />
-    </ThemeProvider>
+      <style jsx global>{`
+        :root {
+          --bg-color: white;
+          --primary-color: orange;
+          --secondary-color: pink;
+          --font-size: 16px;
+        }
+
+        * {
+          padding: 0;
+          margin: 0;
+        }
+
+        body {
+          background: var(--background-color);
+          font-size: var(--font-size-body);
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        }
+      `}</style>
+    </>
   )
 }
 
