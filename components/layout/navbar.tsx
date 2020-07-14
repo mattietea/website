@@ -1,20 +1,29 @@
 import { FC } from 'react'
 import Link from 'next/link'
 
-export const Navbar: FC = props => {
+export const Navbar: FC = (props) => {
   return (
     <nav className="navbar" {...props}>
       <ul className="container">
         <li>
           <Link href="/">
-            <a>🏠 home</a>
+            <a>
+              <span aria-label="home-emoji" role="img"></span>🏠 home
+            </a>
           </Link>
         </li>
         <li style={{ marginLeft: 'auto' }}>
-          <a>✍️ blog</a>
+          <a>
+            <span aria-label="pen-emoji" role="img">
+              ✍️
+            </span>{' '}
+            blog
+          </a>
         </li>
         <li>
-          <a>🕹 playground</a>
+          <a>
+            <span aria-label="joy-stick-emoji" role="img"></span>🕹 playground
+          </a>
         </li>
       </ul>
       <style jsx>
