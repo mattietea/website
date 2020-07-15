@@ -1,4 +1,8 @@
 {
-  "name": "music-comparison",
-  "version": 2
+  "build": {
+    "env": {
+      "NPM_RC": "@npmrc",
+      "GH_TOKEN": "@gh-token"
+    }
+  }
 }
