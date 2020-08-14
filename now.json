@@ -1,7 +1,0 @@
-{
-  "build": {
-    "env": {
-      "GH_TOKEN": "@gh-token"
-    }
-  }
-}
