@@ -1,59 +1,43 @@
-import { FC } from 'react'
 import Link from 'next/link'
+import { FC } from 'react'
 
-export const Navbar: FC = (props) => {
+export const Navbar: FC = (properties) => {
   return (
-    <nav className="navbar" {...props}>
+    <nav className="navbar" {...properties}>
       <ul className="container">
         <li>
           <Link href="/">
-            <a>
-              <span aria-label="home-emoji" role="img"></span>🏠 home
-            </a>
+            <a>mattietea</a>
           </Link>
         </li>
-        <li style={{ marginLeft: 'auto' }}>
-          <a>
-            <span aria-label="pen-emoji" role="img">
-              ✍️
-            </span>{' '}
-            blog
-          </a>
+        <li>-</li>
+        <li>
+          <a>blog</a>
         </li>
         <li>
-          <a>
-            <span aria-label="joy-stick-emoji" role="img"></span>🕹 playground
-          </a>
+          <a>playground</a>
         </li>
       </ul>
-      <style jsx>
+      <style jsx={true}>
         {`
           .navbar {
-            height: 56px;
             display: flex;
-            width: 100%;
-            background-color: #fff;
+            padding: 2rem 1.5rem;
+            max-width: var(--max-width);
+            margin: 0 auto;
           }
 
           ul {
-            max-width: 1080px;
-            margin: 0 auto;
             width: 100%;
             display: flex;
           }
 
           li {
             list-style: none;
-          }
-
-          a {
             display: flex;
-            height: 100%;
-            padding 0 16px;
+            margin-right: 1.5rem;
+            height: 2.5rem;
             align-items: center;
-            text-decoration: none;
-            color: var(--font-color);
-            font-weight: 600;
           }
 
           a:hover {

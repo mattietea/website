@@ -8,11 +8,11 @@ export const Layout: FC = ({ children, ...rest }) => {
       <Navbar />
       <div className="container" {...rest}>
         {children}
-        <style jsx>
+        <style jsx={true}>
           {`
             .container {
-              max-width: 1080px;
-              padding: 0 16px;
+              max-width: var(--max-width);
+              padding: 1rem 1.5rem 0;
               margin: 0 auto;
             }
           `}

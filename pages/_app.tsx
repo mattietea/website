@@ -19,7 +19,9 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
             --bg-color: #fff;
             --primary-color: orange;
             --secondary-color: pink;
-            --font-color: #232323;
+            --font-color: #2d3748;
+
+            --max-width: 1280px;
           }
 
           * {
@@ -28,59 +30,62 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
             box-sizing: border-box;
           }
 
+          html {
+            font-size: 18px;
+          }
+
           body {
             background: var(--bg-color);
             color: var(--font-color);
-            font-size: 16px;
+            line-height: 1.65;
+            font-weight: 500;
             font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
               Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
               Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-            font-weight: 400;
+          }
+
+          p {
+            font-size: 1em;
+            margin-bottom: 1.15rem;
           }
 
           h1,
           h2,
           h3,
           h4,
-          h5,
-          h6 {
-            line-height: 9rem;
-            font-weight: 600;
-          }
-
-          h2,
-          h3,
-          h4 {
-            line-height: 6rem;
-          }
-
-          h5,
-          h6 {
-            line-height: 3rem;
+          h5 {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.15;
           }
 
           h1 {
-            font-size: 6.10352em;
+            margin-top: 0;
+            font-size: 2.488rem;
           }
 
           h2 {
-            font-size: 4.88281em;
+            font-size: 2.074rem;
           }
 
           h3 {
-            font-size: 3.90625em;
+            font-size: 1.728rem;
           }
 
           h4 {
-            font-size: 3.125em;
+            font-size: 1.44rem;
           }
 
           h5 {
-            font-size: 2.5em;
+            font-size: 1.2rem;
           }
 
-          h6 {
-            font-size: 2em;
+          small,
+          .text_small {
+            font-size: 0.833em;
+          }
+
+          a {
+            text-decoration: none;
           }
         `}
       </style>
