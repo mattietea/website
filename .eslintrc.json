@@ -1,9 +1,21 @@
 {
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "es6": true
   },
   "extends": [
     "@mattietea/eslint-config/react"
-  ]
+  ],
+  "rules": {
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "replacements": {
+          "props": false
+        }
+      }
+    ],
+    "unicorn/no-reduce": "off"
+  }
 }

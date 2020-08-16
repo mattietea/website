@@ -1,21 +1,21 @@
-import Link from 'next/link'
-import { FC } from 'react'
+import { FC, ComponentProps } from 'react'
+
+import { Link } from '../link'
 
 export const Navbar: FC = (properties) => {
   return (
     <nav className="navbar" {...properties}>
       <ul className="container">
         <li>
-          <Link href="/">
-            <a>mattietea</a>
-          </Link>
+          <NavLink href="/" match="hard">
+            mattietea
+          </NavLink>
         </li>
         <li>-</li>
         <li>
-          <a>blog</a>
-        </li>
-        <li>
-          <a>playground</a>
+          <NavLink href="/blog" match="soft">
+            blog
+          </NavLink>
         </li>
       </ul>
       <style jsx={true}>
@@ -39,12 +39,27 @@ export const Navbar: FC = (properties) => {
             height: 2.5rem;
             align-items: center;
           }
-
-          a:hover {
-            color: var(--primary-color);
-          }
         `}
       </style>
     </nav>
   )
 }
+
+const NavLink: FC<ComponentProps<typeof Link>> = ({
+  children,
+  href,
+  match,
+  ...rest
+}) => (
+  <Link href={href} match={match}>
+    {(isActive) => {
+      const color = isActive ? 'primary' : 'font'
+
+      return (
+        <a style={{ color: `var(--${color}-color)` }} {...rest}>
+          {children}
+        </a>
+      )
+    }}
+  </Link>
+)

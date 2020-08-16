@@ -87,6 +87,10 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
           a {
             text-decoration: none;
           }
+
+          a:hover {
+            color: var(--primary-color);
+          }
         `}
       </style>
     </>
