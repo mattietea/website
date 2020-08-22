@@ -1,8 +1,9 @@
 import { GetStaticProps } from 'next'
 import { FC } from 'react'
 
+import { Link } from '../../components/link'
 import { PostMetadata } from '../../lib/types'
-import { getDirectoryFiles } from '../../lib/utils/get-directory-files'
+import { getFilePaths } from '../../lib/utils/get-file-paths'
 
 interface Props {
   posts?: Array<PostMetadata>
@@ -14,7 +15,11 @@ const Blog: FC<Props> = ({ posts }) => {
       Blog
       <ul>
         {posts?.map((post) => (
-          <li key={post.title}>{post.title}</li>
+          <li key={post.path}>
+            <Link href={`blog/${post.path}`}>
+              <a>{post.title}</a>
+            </Link>
+          </li>
         ))}
       </ul>
       <style jsx={true}>{``}</style>
@@ -22,11 +27,20 @@ const Blog: FC<Props> = ({ posts }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const files = getDirectoryFiles('posts')
+export default Blog
 
-  const posts = files.map((file) => {
-    return require('../../' + file)?.meta as PostMetadata
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const filePaths = getFilePaths('posts')
+
+  const posts = filePaths.map((filePath) => {
+    const post = require('../../' + filePath)?.meta
+
+    const [path] = filePath.split('.')
+
+    return {
+      ...post,
+      path,
+    }
   })
 
   return {
@@ -35,5 +49,3 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     },
   }
 }
-
-export default Blog

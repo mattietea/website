@@ -1,7 +1,7 @@
 import { readdirSync } from 'fs'
 import { join } from 'path'
 
-export const getDirectoryFiles = (path: string): Array<string> => {
+export const getFilePaths = (path: string): Array<string> => {
   const directory = join(process.cwd(), path)
   const dirents = readdirSync(directory, { withFileTypes: true })
 
@@ -9,7 +9,7 @@ export const getDirectoryFiles = (path: string): Array<string> => {
     if (!dirent.isDirectory()) {
       return `${path}/${dirent.name}`
     } else {
-      return getDirectoryFiles(`${path}/${dirent.name}`)
+      return getFilePaths(`${path}/${dirent.name}`)
     }
   })
 }
