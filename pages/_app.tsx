@@ -1,14 +1,14 @@
-import { AppProps } from 'next/app'
-import Head from 'next/head'
-import { FC } from 'react'
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+import { FC } from 'react';
 
-import { Layout } from '../components/layout'
+import { Layout } from '../components/layout';
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>Matt's Website</title>
+        <title>mattietea's website</title>
       </Head>
       <Layout>
         <Component {...pageProps} />
@@ -94,7 +94,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         `}
       </style>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

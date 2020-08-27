@@ -1,11 +1,10 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
 const IndexPage: FC = () => (
   <div className="container">
     <h1>matt thomas</h1>
     <p style={{ fontSize: '1.1rem', margin: 0 }}>
       frontend developer at divido
-      <br />
     </p>
 
     <style jsx={true}>
@@ -20,6 +19,6 @@ const IndexPage: FC = () => (
       `}
     </style>
   </div>
-)
+);
 
-export default IndexPage
+export default IndexPage;
