@@ -23,7 +23,7 @@
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "@types/theme-ui": "^0.3.2",
-    "eslint": "^7.2.0",
+    "eslint": "^7.10.0",
     "typescript": "3.9.7"
   }
 }
