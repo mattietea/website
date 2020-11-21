@@ -1,6 +1,6 @@
 export interface PostMetadata {
-  title: string
-  path: string
-  description: string
-  tags: Array<string>
+  title: string;
+  path: string;
+  description: string;
+  tags: Array<string>;
 }
