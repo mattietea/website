@@ -11,7 +11,7 @@ interface Props {
 
 const Blog: FC<Props> = ({ posts }) => {
   return (
-    <div className="container">
+    <>
       Blog
       <ul>
         {posts?.map((post) => (
@@ -25,8 +25,7 @@ const Blog: FC<Props> = ({ posts }) => {
           </li>
         ))}
       </ul>
-      <style jsx={true}>{``}</style>
-    </div>
+    </>
   );
 };
 
@@ -36,6 +35,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const filePaths = getFilePaths('posts');
 
   const posts = filePaths.map((filePath) => {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const post = require('../../' + filePath)?.meta;
 
     const [path] = filePath.split('.');

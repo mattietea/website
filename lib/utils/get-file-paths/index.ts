@@ -1,15 +1,15 @@
-import { readdirSync } from 'fs'
-import { join } from 'path'
+import { readdirSync } from 'fs';
+import path from 'path';
 
-export const getFilePaths = (path: string): Array<string> => {
-  const directory = join(process.cwd(), path)
-  const dirents = readdirSync(directory, { withFileTypes: true })
+export const getFilePaths = (location: string): Array<string> => {
+  const directory = path.join(process.cwd(), location);
+  const dirents = readdirSync(directory, { withFileTypes: true });
 
   return dirents.flatMap((dirent) => {
     if (!dirent.isDirectory()) {
-      return `${path}/${dirent.name}`
+      return `${location}/${dirent.name}`;
     } else {
-      return getFilePaths(`${path}/${dirent.name}`)
+      return getFilePaths(`${location}/${dirent.name}`);
     }
-  })
-}
+  });
+};
