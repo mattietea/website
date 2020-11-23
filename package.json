@@ -6,8 +6,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next",
-    "start": "next start",
-    "type-check": "tsc"
+    "eslint": "eslint . --ext ts,tsx,js",
+    "start": "next start"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.1",
