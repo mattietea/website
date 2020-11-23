@@ -1,7 +1,8 @@
+import { Heading, Link, Text, UnorderedList } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
-import { FC } from 'react';
+import NextLink from 'next/link';
+import React, { FC } from 'react';
 
-import { Link } from '../../components/link';
 import { PostMetadata } from '../../lib/types';
 import { getFilePaths } from '../../lib/utils/get-file-paths';
 
@@ -12,19 +13,21 @@ interface Props {
 const Blog: FC<Props> = ({ posts }) => {
   return (
     <>
-      Blog
-      <ul>
+      <Heading>Blog</Heading>
+      <UnorderedList>
         {posts?.map((post) => (
           <li key={post.path}>
-            <Link href={`blog/${post.path}`}>
-              <a style={{ display: 'flex', flexDirection: 'column' }}>
-                {post.title}
-                <small>{post.description}</small>
-              </a>
-            </Link>
+            <NextLink href={`blog/${post.path}`}>
+              <Link sx={{ display: 'flex', flexDirection: 'column' }}>
+                <Heading as="h5" size="sm">
+                  {post.title}
+                </Heading>
+                <Text as="p">{post.description}</Text>
+              </Link>
+            </NextLink>
           </li>
         ))}
-      </ul>
+      </UnorderedList>
     </>
   );
 };

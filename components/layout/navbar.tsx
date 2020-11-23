@@ -1,26 +1,50 @@
-import { Flex, Link as UiLink } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  ChakraProps,
+  Link,
+  Wrap,
+  WrapItem,
+} from '@chakra-ui/react';
+import NextLink from 'next/link';
 import React, { FC } from 'react';
 
-import { Link } from '../link';
-
-export const Navbar: FC = (properties) => {
+export const Navbar: FC<ChakraProps> = (properties) => {
   return (
-    <Flex as="nav">
-      <nav className="navbar" {...properties}>
-        <ul className="container">
-          <li>
-            <Link href="/" match="hard">
-              mattietea
-            </Link>
-          </li>
-          <li>-</li>
-          <li>
-            <Link href="/blog" match="soft">
-              <UiLink>blog</UiLink>
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </Flex>
+    <Box
+      as={'nav'}
+      sx={{
+        borderBottom: '1px',
+        borderColor: 'gray.200',
+      }}
+      {...properties}
+    >
+      <Wrap
+        sx={{
+          marginX: 'auto',
+          maxWidth: 'container.xl',
+          paddingX: 6,
+        }}
+        {...properties}
+      >
+        <WrapItem>
+          <NavLink>mattietea</NavLink>
+        </WrapItem>
+      </Wrap>
+    </Box>
+  );
+};
+
+const NavLink: FC = ({ children }) => {
+  return (
+    <NextLink href="/">
+      <Link
+        sx={{
+          fontWeight: 'semibold',
+        }}
+      >
+        <Center sx={{ height: 16 }}>{children}</Center>
+      </Link>
+    </NextLink>
   );
 };
