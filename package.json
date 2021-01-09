@@ -22,7 +22,7 @@
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "@mattietea/eslint-config": "^1.6.1",
+    "@mattietea/eslint-config": "^1.8.1",
     "@types/eslint": "^7.2.5",
     "@types/node": "^14.11.10",
     "@types/prettier": "^2.1.5",
