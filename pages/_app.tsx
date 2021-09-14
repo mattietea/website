@@ -1,9 +1,9 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, Container } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { FC } from 'react';
 
-import { Layout } from '../components/layout';
+import { theme } from '../lib/theme';
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (
@@ -11,10 +11,10 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
       <Head>
         <title>mattietea's website</title>
       </Head>
-      <ChakraProvider>
-        <Layout>
+      <ChakraProvider theme={theme}>
+        <Container maxW="container.lg">
           <Component {...pageProps} />
-        </Layout>
+        </Container>
       </ChakraProvider>
     </>
   );
