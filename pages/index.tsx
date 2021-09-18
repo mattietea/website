@@ -1,4 +1,4 @@
-import { Heading, Text, Flex, Center } from '@chakra-ui/react';
+import { Heading, Text, Center, Stack, Box } from '@chakra-ui/react';
 import { GetServerSideProps } from 'next';
 import React, { FC } from 'react';
 
@@ -16,12 +16,29 @@ type Props = {
 const IndexPage: FC<Props> = ({ profile }) => {
   return (
     <Center h="100vh">
-      <Flex direction="column" spacing={1} width="100%">
+      <Stack
+        direction="column"
+        marginRight="auto"
+        spacing={2}
+        textTransform="lowercase"
+      >
         <Text>hey there, i'm</Text>
-        <Heading as="h1" fontSize="4xl" textTransform="lowercase">
+        <Heading as="h1" fontSize="5xl">
           {profile.name}
         </Heading>
-      </Flex>
+
+        <Text>
+          i'm a frontend engineer at{' '}
+          <Text as="span" borderBottom="2px" borderColor="teal.300">
+            {profile.company.trimEnd()}
+          </Text>
+          ,<Box as="br" display={['none', 'block']} /> based in{' '}
+          <Text as="span" borderBottom="2px" borderColor="teal.300">
+            {profile.location}
+          </Text>
+          .
+        </Text>
+      </Stack>
     </Center>
   );
 };
@@ -37,7 +54,20 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
           bio 
           company
           email 
-          location 
+          location
+          repositories(isFork: false, privacy: PUBLIC, first: 10, orderBy: {field: NAME, direction: ASC}) {
+            nodes {
+              languages(first: 100, orderBy: {field: SIZE, direction: DESC}) {
+                totalCount
+                edges {
+                  size
+                  node {
+                    name
+                  }
+                }
+              }
+            }
+          }
         } 
       }`,
     }),
