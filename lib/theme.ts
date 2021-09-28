@@ -1,4 +1,9 @@
-import { DeepPartial, extendTheme, Theme } from '@chakra-ui/react';
+import {
+  DeepPartial,
+  extendTheme,
+  Theme,
+  withDefaultColorScheme,
+} from '@chakra-ui/react';
 
 const config: DeepPartial<Theme> = {
   config: {
@@ -11,12 +16,19 @@ const config: DeepPartial<Theme> = {
   },
   styles: {
     global: (props) => ({
+      '*, *:before, *:after': {
+        borderColor: props.colorMode === 'dark' ? 'gray.700' : 'gray.300',
+        borderStyle: 'solid',
+      },
       'html, body': {
-        backgroundColor: props.colorMode === 'dark' ? 'black' : 'white',
+        backgroundColor: props.colorMode === 'dark' ? 'gray.900' : 'white',
         color: props.colorMode === 'dark' ? 'white' : 'gray.800',
       },
     }),
   },
 };
 
-export const theme = extendTheme(config);
+export const theme = extendTheme(
+  config,
+  withDefaultColorScheme({ colorScheme: 'teal' }),
+);

@@ -15,7 +15,7 @@ type Props = {
 
 const IndexPage: FC<Props> = ({ profile }) => {
   return (
-    <Center h="100vh">
+    <Center h="calc(100vh - 250px)">
       <Stack
         direction="column"
         marginRight="auto"
