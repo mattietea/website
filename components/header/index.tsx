@@ -1,5 +1,4 @@
 import { useColorMode } from '@chakra-ui/color-mode';
-import { MoonIcon } from '@chakra-ui/icons';
 import {
   Box,
   Spacer,
@@ -11,11 +10,14 @@ import {
 } from '@chakra-ui/layout';
 import NextLink from 'next/link';
 import React, { FC } from 'react';
+import { RiMoonFill as MoonIcon, RiSunFill as SunIcon } from 'react-icons/ri';
 
 export type HeaderProps = BoxProps;
 
 export const Header: FC<HeaderProps> = (props) => {
-  const { toggleColorMode } = useColorMode();
+  const { toggleColorMode, colorMode } = useColorMode();
+
+  const isDark = colorMode === 'dark';
 
   return (
     <>
@@ -37,7 +39,7 @@ export const Header: FC<HeaderProps> = (props) => {
           </NextLink>
           <Spacer />
           <NavLink onClick={toggleColorMode}>
-            <MoonIcon />
+            {isDark ? <SunIcon /> : <MoonIcon />}
           </NavLink>
         </Center>
       </Box>

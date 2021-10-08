@@ -1,8 +1,9 @@
-import { Heading, Text, Center, Box, Stack } from '@chakra-ui/react';
+import { Heading, Text, Center, Box, Stack, Spacer } from '@chakra-ui/react';
 import { GetServerSideProps } from 'next';
 import React, { FC } from 'react';
 
-import { Avatar } from 'components/me';
+import { Avatar } from 'components/avatar';
+import { SocialList } from 'components/social-list';
 
 type Props = {
   profile: {
@@ -17,9 +18,13 @@ type Props = {
 
 const IndexPage: FC<Props> = ({ profile }) => {
   return (
-    <Stack direction="row" h="calc(100vh - 200px)">
-      <Center w={['100%', '100%', '50%', '50%']}>
-        <Stack direction="column" marginRight="auto" textTransform="lowercase">
+    <Stack
+      direction={['column-reverse', 'column-reverse', 'row']}
+      h="calc(100vh - 200px)"
+      justifyContent="center"
+    >
+      <Center w="100%">
+        <Stack direction="column" textTransform="lowercase">
           <Text>hey there, i'm</Text>
           <Heading as="h1" fontSize="5xl">
             {profile?.name}
@@ -35,10 +40,12 @@ const IndexPage: FC<Props> = ({ profile }) => {
             </Text>
             .
           </Text>
+          <Spacer />
+          <SocialList />
         </Stack>
       </Center>
-      <Center display={['none', 'none', 'flex', 'flex']} width="50%">
-        <Avatar />
+      <Center pb={[18, 18, 0, 0]} w="100%">
+        <Avatar size={['150px', '150px', '250px', '250px']} />
       </Center>
     </Stack>
   );

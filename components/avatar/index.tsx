@@ -2,11 +2,12 @@
 import { Box, BoxProps, useColorModeValue } from '@chakra-ui/react';
 import { FC } from 'react';
 
-export type AvatarProps = BoxProps;
+export interface AvatarProps extends BoxProps {
+  size?: BoxProps['height'];
+}
 
 export const Avatar: FC<AvatarProps> = ({
-  height = '250px',
-  width = '250px',
+  size = '250px',
   borderRadius = 'full',
   ...rest
 }) => {
@@ -17,10 +18,10 @@ export const Avatar: FC<AvatarProps> = ({
       as="svg"
       bg={bg}
       borderRadius={borderRadius}
-      height={height}
+      height={size}
       version="1.1"
       viewBox="0 0 264 280"
-      width={width}
+      width={size}
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
     >
