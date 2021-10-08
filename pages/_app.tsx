@@ -14,7 +14,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
       </Head>
       <ChakraProvider theme={theme}>
         <Header />
-        <Container maxW="container.lg">
+        <Container maxW="container.lg" minHeight="calc(100vh - 210px)">
           <Component {...pageProps} />
         </Container>
         <CSSReset />

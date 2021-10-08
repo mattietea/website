@@ -1,6 +1,8 @@
-import { Heading, Text, Center, Stack, Box } from '@chakra-ui/react';
+import { Heading, Text, Center, Box, Stack } from '@chakra-ui/react';
 import { GetServerSideProps } from 'next';
 import React, { FC } from 'react';
+
+import { Avatar } from 'components/me';
 
 type Props = {
   profile: {
@@ -15,31 +17,30 @@ type Props = {
 
 const IndexPage: FC<Props> = ({ profile }) => {
   return (
-    <Center h="calc(100vh - 250px)">
-      <Stack
-        direction="column"
-        marginRight="auto"
-        spacing={2}
-        textTransform="lowercase"
-      >
-        <Text>hey there, i'm</Text>
-        <Heading as="h1" fontSize="5xl">
-          {profile.name}
-        </Heading>
-
-        <Text>
-          i'm a frontend engineer at{' '}
-          <Text as="span" borderBottom="2px" borderColor="teal.300">
-            {profile.company.trimEnd()}
+    <Stack direction="row" h="calc(100vh - 200px)">
+      <Center w={['100%', '100%', '50%', '50%']}>
+        <Stack direction="column" marginRight="auto" textTransform="lowercase">
+          <Text>hey there, i'm</Text>
+          <Heading as="h1" fontSize="5xl">
+            {profile?.name}
+          </Heading>
+          <Text>
+            i'm a frontend engineer at{' '}
+            <Text as="span" borderBottom="2px" borderColor="teal.300">
+              {profile.company?.trimEnd()}
+            </Text>
+            ,<Box as="br" display={['none', 'block']} /> based in{' '}
+            <Text as="span" borderBottom="2px" borderColor="teal.300">
+              {profile.location}
+            </Text>
+            .
           </Text>
-          ,<Box as="br" display={['none', 'block']} /> based in{' '}
-          <Text as="span" borderBottom="2px" borderColor="teal.300">
-            {profile.location}
-          </Text>
-          .
-        </Text>
-      </Stack>
-    </Center>
+        </Stack>
+      </Center>
+      <Center display={['none', 'none', 'flex', 'flex']} width="50%">
+        <Avatar />
+      </Center>
+    </Stack>
   );
 };
 
