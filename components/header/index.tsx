@@ -7,16 +7,19 @@ import {
   Link,
   Center,
   Divider,
+  BoxProps,
 } from '@chakra-ui/layout';
 import NextLink from 'next/link';
 import React, { FC } from 'react';
 
-export const Header = () => {
+export type HeaderProps = BoxProps;
+
+export const Header: FC<HeaderProps> = (props) => {
   const { toggleColorMode } = useColorMode();
 
   return (
     <>
-      <Box as="header" pos="fixed" width="100%">
+      <Box as="header" pos="fixed" width="100%" {...props}>
         <Center height={20} marginX="auto" maxW="container.lg">
           <NextLink href="/">
             <NavLink>mattietea</NavLink>
@@ -27,8 +30,10 @@ export const Header = () => {
             opacity="1"
             orientation="vertical"
           />
-          <NextLink href="/blog">
-            <NavLink>blog</NavLink>
+          <NextLink href="/">
+            <NavLink color="gray.500" cursor="not-allowed" variant="disabled">
+              blog (...one day)
+            </NavLink>
           </NextLink>
           <Spacer />
           <NavLink onClick={toggleColorMode}>
