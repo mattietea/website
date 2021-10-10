@@ -26,7 +26,7 @@ const IndexPage: FC<Props> = ({ profile }) => {
       <Center w="100%">
         <Stack direction="column" textTransform="lowercase">
           <Text>hey there, i'm</Text>
-          <Heading as="h1" fontSize="5xl">
+          <Heading as="h1" fontSize="4xl">
             {profile?.name}
           </Heading>
           <Text>
