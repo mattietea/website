@@ -1169,10 +1169,12 @@
   resolved "https://registry.yarnpkg.com/@next/env/-/env-11.1.2.tgz#27996efbbc54c5f949f5e8c0a156e3aa48369b99"
   integrity sha512-+fteyVdQ7C/OoulfcF6vd1Yk0FEli4453gr8kSFbU8sKseNSizYq6df5MKz/AjwLptsxrUeIkgBdAzbziyJ3mA==
 
-"@next/mdx@^11.1.2":
-  version "11.1.2"
-  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-11.1.2.tgz#cf4fbbc453d827008e82daa97591755e1321c29f"
-  integrity sha512-uRodX0OGSWMGTzun1QGfpXisKjz4ptWoizYqhXWZubLFJsRG/GKbB9n9hh3l48KlzKMO2S1REAOKJd+x9h/nWw==
+"@next/mdx@^13.0.5":
+  version "13.0.5"
+  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-13.0.5.tgz#e92c713fa1ca66b504962775e6b626cc593131e4"
+  integrity sha512-4BMiUpul73hlHH4127Z+/yun+V/C4uZEm3DvUeqPEeRpRc6ZvaN6YiCaHJXfVIuarl+ZsJlhoevCxV9oXe/5xw==
+  dependencies:
+    source-map "^0.7.0"
 
 "@next/polyfill-module@11.1.2":
   version "11.1.2"
