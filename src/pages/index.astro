@@ -1,0 +1,26 @@
+---
+import Avatar from "../components/Avatar.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main
+    class="min-h-screen grid sm:grid-cols-2 sm:gap-4 grid-cols-1 justify-center items-center"
+  >
+    <div class="flex flex-col gap-4">
+      <p class="font-semibold text-xl">👋, i'm</p>
+      <h1
+        class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl"
+      >
+        matt thomas
+      </h1>
+      <p class="font-semibold text-xl">i'm a 👨‍💻 at shopify</p>
+      <p class="font-semibold text-md">📍 London</p>
+    </div>
+    <div class="sm:block hidden rounded-full overflow-hidden max-w-sm border">
+      <Avatar size={"100%"} />
+    </div>
+  </main>
+</Layout>
+
+<style></style>
