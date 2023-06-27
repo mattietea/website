@@ -1,4 +1,4 @@
-# :penguin: Website
+# :penguin: My website
 
 ## Install
 
