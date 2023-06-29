@@ -4,9 +4,7 @@
     "node": true,
     "es6": true
   },
-  "extends": [
-    "@mattietea/eslint-config/react"
-  ],
+  "extends": ["@mattietea/eslint-config/react"],
   "rules": {
     "unicorn/prevent-abbreviations": [
       "error",

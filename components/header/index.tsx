@@ -8,7 +8,6 @@ import {
   Divider,
   BoxProps,
 } from '@chakra-ui/layout';
-import NextLink from 'next/link';
 import React, { FC } from 'react';
 import { RiMoonFill as MoonIcon, RiSunFill as SunIcon } from 'react-icons/ri';
 
@@ -23,20 +22,13 @@ export const Header: FC<HeaderProps> = (props) => {
     <>
       <Box as="header" pos="fixed" width="100%" {...props}>
         <Center height={20} marginX="auto" maxW="container.lg">
-          <NextLink href="/">
-            <NavLink>mattietea</NavLink>
-          </NextLink>
+          <NavLink>mattietea</NavLink>
           <Divider
             color="currentcolor"
             height="8"
             opacity="1"
             orientation="vertical"
           />
-          <NextLink href="/">
-            <NavLink color="gray.500" cursor="not-allowed" variant="disabled">
-              blog (...one day)
-            </NavLink>
-          </NextLink>
           <Spacer />
           <NavLink onClick={toggleColorMode}>
             {isDark ? <SunIcon /> : <MoonIcon />}
