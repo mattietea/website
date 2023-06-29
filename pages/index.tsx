@@ -32,11 +32,11 @@ const IndexPage: FC<Props> = ({ profile }) => {
           <Text>
             i'm a frontend engineer at{' '}
             <Text as="span" borderBottom="2px" borderColor="teal.300">
-              {profile.company?.trimEnd()}
+              {profile?.company?.trimEnd()}
             </Text>
             ,<Box as="br" display={['none', 'block']} /> based in{' '}
             <Text as="span" borderBottom="2px" borderColor="teal.300">
-              {profile.location}
+              {profile?.location}
             </Text>
             .
           </Text>
@@ -89,7 +89,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 
   return {
     props: {
-      profile: data?.viewer,
+      profile: data?.viewer ?? null,
     },
   };
 };
