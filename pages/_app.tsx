@@ -9,7 +9,7 @@ import { theme } from 'lib/theme';
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <>
+    <main>
       <Head>
         <title>mattietea's website</title>
       </Head>
@@ -21,7 +21,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <CSSReset />
       </ChakraProvider>
       <Analytics />
-    </>
+    </main>
   );
 };
 

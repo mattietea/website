@@ -11,9 +11,9 @@ const config: DeepPartial<Theme> = {
     useSystemColorMode: false,
   },
   fonts: {
-    body: "'Inconsolata', 'Overpass Mono', sans-serif",
-    heading: "'Poppins', 'Poppins', serif",
-    mono: "'Overpass Mono', 'monospace'",
+    body: 'SFMono-Regular,Menlo,Monaco,Consolas,monospace',
+    heading: 'SFMono-Regular,Menlo,Monaco,Consolas,monospace',
+    mono: 'SFMono-Regular,Menlo,Monaco,Consolas,monospace',
   },
   styles: {
     global: (props) => ({
