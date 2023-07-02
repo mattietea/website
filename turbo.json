@@ -5,16 +5,15 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
-    "lint": {},
+    "website#build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "website#build": {
-      "dependsOn": ["^build"],
-      "env": ["SOME_OTHER_ENV_VAR"],
-      "outputs": [".next/**", "!.next/cache/**"]
-    }
+    "lint": {}
   },
   "globalEnv": ["GITHUB_TOKEN"]
 }

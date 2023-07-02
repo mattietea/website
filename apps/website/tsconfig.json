@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "tsconfig/nextjs.json",
+  "extends": "tsconfig/nextjs",
   "compilerOptions": {
     "plugins": [{ "name": "next" }],
     "baseUrl": "."

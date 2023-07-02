@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "website",
   "version": "1.0.0",
   "description": "My personal website",
@@ -27,7 +28,6 @@
     "@types/prettier": "^2.7.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
-    "typescript": "5.1.6",
     "tsconfig": "*"
   }
 }
