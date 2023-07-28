@@ -12,9 +12,9 @@
   },
   "devDependencies": {
     "dotenv-cli": "^7.2.1",
-    "eslint": "8.44.0",
-    "prettier": "^2.5.1",
-    "turbo": "^1.9.3",
+    "eslint": "8.45.0",
+    "prettier": "^3.0.0",
+    "turbo": "^1.10.12",
     "typescript": "^5.1.6"
   }
 }

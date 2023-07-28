@@ -11,7 +11,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <main>
       <Head>
-        <title>mattietea's website</title>
+        <title>mattietea&apos;s website</title>
       </Head>
       <ChakraProvider theme={theme}>
         <Header />

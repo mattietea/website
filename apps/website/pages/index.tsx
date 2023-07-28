@@ -25,12 +25,12 @@ const IndexPage: FC<Props> = ({ profile }) => {
     >
       <Center w="100%">
         <Stack direction="column" textTransform="lowercase">
-          <Text>hey there, i'm</Text>
+          <Text>hey there, i&rsquo;m</Text>
           <Heading as="h1" fontSize="4xl">
             {profile?.name}
           </Heading>
           <Text>
-            i'm a frontend engineer at{' '}
+            i&rsquo;m a frontend engineer at{' '}
             <Text as="span" borderBottom="2px" borderColor="teal.300">
               {profile?.company?.trimEnd()}
             </Text>
@@ -56,12 +56,12 @@ export default IndexPage;
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const request = await fetch('https://api.github.com/graphql', {
     body: JSON.stringify({
-      query: `{ 
-        viewer { 
-          name 
-          bio 
+      query: `{
+        viewer {
+          name
+          bio
           company
-          email 
+          email
           location
           repositories(isFork: false, privacy: PUBLIC, first: 10, orderBy: {field: NAME, direction: ASC}) {
             nodes {
@@ -76,7 +76,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
               }
             }
           }
-        } 
+        }
       }`,
     }),
     headers: {
